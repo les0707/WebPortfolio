@@ -21,32 +21,55 @@
         .animate-slide-down {
             animation: slideDown 0.8s ease-out;
         }
+
+        body {
+            background: url('{{ asset("images/BGGIF.gif") }}') no-repeat center center fixed;
+            background-size: cover;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
     <!-- Navbar -->
-    <nav class="sticky top-0 flex justify-center py-4 animate-slide-down">
-        <div class="bg-white sticky top-0 flex justify-between items-center px-6 py-2 border border-black rounded-full shadow-md">
-            <a href="#" class="mx-4 text-black font-semibold hover:text-gray-600 relative group">
-                Home
-                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#" class="mx-4 text-black font-semibold hover:text-gray-600 relative group">
-                Pricing
-                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#" class="mx-4 text-black font-semibold hover:text-gray-600 relative group">
-                Features
-                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#" class="mx-4 text-black font-semibold hover:text-gray-600 relative group">
-                Docs
-                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#" class="mx-4 text-black font-semibold hover:text-gray-600 relative group">
-                Blog
-                <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
+    <nav class="sticky top-0 bg-white shadow-md">
+        <div class="flex justify-between items-center px-6 py-4">
+            <div class="text-2xl font-bold">About Me</div>
+            <!-- Hamburger Icon -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <!-- Links -->
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="#" class="text-black font-semibold hover:text-gray-600 relative group">
+                    Home
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-black font-semibold hover:text-gray-600 relative group">
+                    Pricing
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-black font-semibold hover:text-gray-600 relative group">
+                    Features
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-black font-semibold hover:text-gray-600 relative group">
+                    Docs
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-black font-semibold hover:text-gray-600 relative group">
+                    Blog
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+        </div>
+        <!-- Mobile Links -->
+        <div id="mobile-menu" class="hidden flex-col space-y-2 px-6 py-4 md:hidden bg-white border-t border-gray-200">
+            <a href="#" class="text-black font-semibold hover:text-gray-600">Home</a>
+            <a href="#" class="text-black font-semibold hover:text-gray-600">Pricing</a>
+            <a href="#" class="text-black font-semibold hover:text-gray-600">Features</a>
+            <a href="#" class="text-black font-semibold hover:text-gray-600">Docs</a>
+            <a href="#" class="text-black font-semibold hover:text-gray-600">Blog</a>
         </div>
     </nav>
 
@@ -81,5 +104,15 @@
             </p>
         </div>
     </section>
+
+    <script>
+        // Hamburger menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
