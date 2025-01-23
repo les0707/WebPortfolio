@@ -6,6 +6,9 @@
     <title>About Me</title>
     @vite('resources/css/app.css')
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         /* Navbar slide-down animation */
         @keyframes slideDown {
             from {
@@ -45,8 +48,8 @@
                     Home
                     <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="#" class="text-black font-semibold hover:text-gray-600 relative group">
-                    Pricing
+                <a href="#resume" class="text-black font-semibold hover:text-gray-600 relative group">
+                    Resume
                     <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a href="#" class="text-black font-semibold hover:text-gray-600 relative group">
@@ -66,7 +69,7 @@
         <!-- Mobile Links -->
         <div id="mobile-menu" class="hidden flex-col space-y-2 px-6 py-4 md:hidden bg-white border-t border-gray-200">
             <a href="#" class="text-black font-semibold hover:text-gray-600">Home</a>
-            <a href="#" class="text-black font-semibold hover:text-gray-600">Pricing</a>
+            <a href="#resume" class="text-black font-semibold hover:text-gray-600">Resume</a>
             <a href="#" class="text-black font-semibold hover:text-gray-600">Features</a>
             <a href="#" class="text-black font-semibold hover:text-gray-600">Docs</a>
             <a href="#" class="text-black font-semibold hover:text-gray-600">Blog</a>
@@ -89,7 +92,7 @@
             </div>
         </div>
     </section>
-    <section class="h-screen w-full flex items-center justify-center" style="background-image: url('{{ asset('images/BG1.jpg') }}'); background-size: cover; background-position: center;">
+    <section id="resume" class="h-screen w-full flex items-center justify-center" style="background-image: url('{{ asset('images/BG1.jpg') }}'); background-size: cover; background-position: center;">
         <div class="container mx-auto py-10 max-w-6xl">
             <h1 class="text-3xl font-bold text-center text-black">Full Stack Web Developer</h1>
             <p class="text-center mb-4 text-black ext-slate-700 dark:text-slate-500">
@@ -102,6 +105,17 @@
                 My goal is to build functional, efficient, and visually appealing web applications that solve real-world problems. 
                 Let's collaborate and bring your ideas to life!
             </p>
+
+            <div class="text-center mt-6">
+                <a href="{{ asset('RESUME - LEIGH VINCENT M. Esclanda.pdf.pdf') }}" download="RESUME - LEIGH VINCENT M. Esclanda.pdf.pdf">
+                    <button class="relative inline-block font-medium group py-3 px-6 text-xl">
+                        <span class="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-indigo-600 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span class="absolute inset-0 w-full h-full bg-white border border-indigo-600 group-hover:bg-indigo-50"></span>
+                        <span class="relative text-indigo-600">My Resume</span>
+                    </button>
+                </a>
+            </div>
+
         </div>
     </section>
 
